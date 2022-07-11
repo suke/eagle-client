@@ -1,0 +1,17 @@
+# Outputs
+dist
+
+# Lock files
+yarn.lock
+
+# Dependencies
+node_modules
+
+# System files
+.DS_Store
+
+# Editor config
+.vscode/
+
+# Logs
+yarn-error.log

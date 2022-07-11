@@ -1,0 +1,9 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "outDir": "../dist/spec",
+      "baseUrl": "./",
+      "types": ["jest"]
+    },
+    "include": ["**/*.spec.ts"]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "eagle-client",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "typings": "dist/types/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "clean": "rimraf dist",
+    "build": "yarn clean && yarn build:js && yarn build:types",
+    "build:js": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly",
+    "prettier": "prettier --write '**/*.{js,ts}' --ignore-path .gitignore",
+    "test": "jest",
+    "lint": "eslint src/**/*",
+    "lint:fix": "eslint --fix src/**/*"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn prettier",
+      "yarn lint"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/jest": "^28.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "axios-mock-adapter": "^1.21.1",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.0",
+    "jest": "^28.1.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.4"
+  }
+}
